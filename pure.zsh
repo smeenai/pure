@@ -409,7 +409,7 @@ prompt_pure_setup() {
 	add-zsh-hook precmd prompt_pure_precmd
 	add-zsh-hook preexec prompt_pure_preexec
 
-	zstyle ':vcs_info:*' enable git
+	zstyle ':vcs_info:*' enable git hg
 	zstyle ':vcs_info:*' use-simple true
 	# only export two msg variables from vcs_info
 	zstyle ':vcs_info:*' max-exports 2
@@ -417,6 +417,9 @@ prompt_pure_setup() {
 	# vcs_info_msg_1_ = 'x%R' git top level (%R), x-prefix prevents creation of a named path (AUTO_NAME_DIRS)
 	zstyle ':vcs_info:git*' formats ' %b' 'x%R'
 	zstyle ':vcs_info:git*' actionformats ' %b|%a' 'x%R'
+
+  zstyle ':vcs_info:hg*' branchformat '$(_dotfiles_scm_info "[%s]")'
+	zstyle ':vcs_info:hg*' formats '%F{010}%b'
 
 	# if the user has not registered a custom zle widget for clear-screen,
 	# override the builtin one so that the preprompt is displayed correctly when
