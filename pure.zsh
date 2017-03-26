@@ -418,7 +418,7 @@ prompt_pure_setup() {
 	zstyle ':vcs_info:git*' formats ' %b' 'x%R'
 	zstyle ':vcs_info:git*' actionformats ' %b|%a' 'x%R'
 
-  zstyle ':vcs_info:hg*' branchformat '$(_dotfiles_scm_info "[%s]")'
+	zstyle ':vcs_info:hg*' branchformat '$(_dotfiles_scm_info "[%s]")'
 	zstyle ':vcs_info:hg*' formats '%F{010}%b'
 
 	# if the user has not registered a custom zle widget for clear-screen,
